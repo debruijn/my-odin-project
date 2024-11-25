@@ -6,4 +6,9 @@ dist
 .cache
 .idea
 jetbrains_boilerplate
-html-boilerplate
+testground
+css-exercises/*
+!css-exercises/foundations
+css-exercises/foundations/*
+!css-exercises/foundations/intro-to-css
+**/solution
