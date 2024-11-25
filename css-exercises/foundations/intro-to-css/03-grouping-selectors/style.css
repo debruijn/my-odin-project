@@ -1,0 +1,13 @@
+.btn_class {
+    font-size: 28px;
+    font-family: Helvetica, "Times New Roman", sans-serif;
+}
+
+#black_btn {
+    color: white;
+    background-color: black;
+}
+
+#yellow_btn {
+    background-color: yellow;
+}
