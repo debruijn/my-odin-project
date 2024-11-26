@@ -3,3 +3,8 @@ a course on (among other things) getting started with these languages/technologi
 
 At the end of following this project, I should have more knowledge about HTML and CSS, and also gained initial knowledge
 about JavaScript, to add to my current set of languages I am proficient in.
+
+### Status per path:
+1. Foundations track: 62% complete (finished HTML, wrapping up CSS, almost starting JS)
+2. Full Stack JavaScript: to do
+3. Full Stack Ruby on Rails: to do
