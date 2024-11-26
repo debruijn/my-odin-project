@@ -11,5 +11,6 @@ css-exercises/*
 !css-exercises/foundations
 css-exercises/foundations/*
 !css-exercises/foundations/intro-to-css
+!css-exercises/foundations/block-and-inline
 !css-exercises/foundations/cascade
 **/solution
