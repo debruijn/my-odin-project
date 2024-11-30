@@ -1,0 +1,46 @@
+body {
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #1F2937;
+  color: #E5E7Eb;
+  font-size: 18px;
+}
+
+.header {
+  flex: 1;
+  color: #F9FaF8;
+  font-size: 24px;
+}
+
+.hero {
+  flex: 1;
+  color: #F9FaF8;
+  font-size: 48px;
+  font-weight: 900;
+}
+
+.random {
+  flex: 1;
+  background-color: #F9FaF8;
+  color: #1F2937;
+  font-size: 36px;
+  font-weight: 900;
+}
+
+.quote {
+  flex: 1;
+  background-color: #E5E7Eb;
+  font-size: 36px;
+  color: #1F2937;
+}
+
+.cta {
+  flex: 1;
+  background-color: #3882F6;
+}
+
+.footer {
+  flex: 1;
+}
