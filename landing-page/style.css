@@ -3,25 +3,96 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #1F2937;
   color: #E5E7Eb;
   font-size: 18px;
+  margin: 0;
 }
 
 .header {
+  display: flex;
+  background-color: #1F2937;
+  justify-content: space-between;
+  padding: 30px 100px;
+
+}
+
+.header .left {
   flex: 1;
   color: #F9FaF8;
   font-size: 24px;
 }
 
+ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  text-decoration: none;
+  margin: 4px;
+}
+
 .hero {
+  display: flex;
+  justify-content: space-between;
+  padding: 100px;
+  background-color: #1F2937;
+
+}
+
+.hero .left {
+  flex: 1;
+  padding: 100px;
+  width: 300px;
+}
+
+.hero .left .main {
   flex: 1;
   color: #F9FaF8;
   font-size: 48px;
   font-weight: 900;
+  /*margin-left: 40px;*/
+  /*margin-right: 40px;*/
+}
+
+.hero .left .secondary {
+  font-weight: 300;
+  font-size: 12pt;
+}
+
+.hero .left .button {
+  background-color: #3882F6;
+  width: fit-content;
+  padding: 8px 30px;
+  border-radius: 8px;
+  margin: 8px
+}
+
+.hero .right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+  margin: 100px 0px;
+  padding: 20px;
+  width: 300px;
 }
 
 .random {
+  flex: 1;
+  background-color: #F9FaF8;
+  color: #1F2937;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+
+.random .title {
   flex: 1;
   background-color: #F9FaF8;
   color: #1F2937;
@@ -29,18 +100,71 @@ body {
   font-weight: 900;
 }
 
+.random .images {
+  flex: 1;
+  display: flex;
+  padding: 30px 300px;
+  margin: 0 100px;
+}
+
+.random .images .content {
+  border-radius: 15px;
+  border: 3px solid #3882F6;
+  padding: 80px;
+  margin: 20px;
+}
+
 .quote {
+  background-color: #E5E7Eb;
+  color: #1F2937;
+  padding: 100px 200px;
+
+}
+
+.quote .text {
   flex: 1;
   background-color: #E5E7Eb;
   font-size: 36px;
   color: #1F2937;
+  font-weight: 200;
+}
+
+.quote .author {
+  text-align: right;
+  font-weight: 700;
+
 }
 
 .cta {
   flex: 1;
   background-color: #3882F6;
+  display: flex;
+  justify-content: space-between;
+  margin: 100px;
+  padding: 50px 100px;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.cta .left .title {
+  font-weight: 700;
+}
+
+.cta .left .subtext {
+  font-size: 12pt;
+  font-weight: 300;
+}
+
+.cta .right {
+  border-radius: 8px;
+  border: 3px solid #E5E7Eb;
+  padding: 8px 30px;
 }
 
 .footer {
+  justify-content: center;
+  background-color: #1F2937;
   flex: 1;
+  display: flex;
+  padding: 30px;
 }
