@@ -5,6 +5,6 @@ At the end of following this project, I should have more knowledge about HTML an
 about JavaScript, to add to my current set of languages I am proficient in.
 
 ### Status per path:
-1. Foundations track: 62% complete (finished HTML, wrapping up CSS, almost starting JS)
+1. Foundations track: 66% complete (finished HTML & CSS parts, next up starting JS)
 2. Full Stack JavaScript: to do
 3. Full Stack Ruby on Rails: to do
