@@ -1,7 +1,7 @@
 console.log("Hello World")
 
 function getComputerChoice() {
-    let rand = Math.random()
+    const rand = Math.random()
     if (rand < 1/3) {
         return "R"
     } else if (rand < 2/3) {
@@ -51,4 +51,9 @@ function playRound(humanChoice, computerChoice) {
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+let res = playRound(humanSelection, computerSelection);
+if (res === 1) {
+    humanScore += 1
+} else if (res === -1) {
+    computerScore += 1
+}
