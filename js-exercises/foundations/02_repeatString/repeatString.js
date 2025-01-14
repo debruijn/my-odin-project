@@ -2,11 +2,11 @@ const repeatString = function(text, times) {
     if (times < 0) {
         return "ERROR"
     }
-    let repeated_text = "";
+    let repeatedText = "";
     for (let i = 0; i < times; i++) {
-        repeated_text += text;
+        repeatedText += text;
     }
-    return repeated_text;
+    return repeatedText;
 };
 
 // Do not edit below this line
