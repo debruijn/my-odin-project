@@ -13,6 +13,7 @@ js-exercises/foundations/*
 !js-exercises/foundations/00_rock-paper-scissors
 !js-exercises/foundations/01_helloWorld
 !js-exercises/foundations/02_repeatString
+!js-exercises/foundations/03_reverseString
 **/solution
 local/*
 .vscode
