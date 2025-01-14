@@ -9,7 +9,8 @@ jetbrains_boilerplate
 testground
 css-exercises/*
 !css-exercises/foundations
-js-exercises/foundations
+js-exercises/foundations/*
+!js-exercises/foundations/00_rock-paper-scissors
 **/solution
 local/*
 .vscode
