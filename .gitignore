@@ -14,6 +14,7 @@ js-exercises/foundations/*
 !js-exercises/foundations/01_helloWorld
 !js-exercises/foundations/02_repeatString
 !js-exercises/foundations/03_reverseString
+!js-exercises/foundations/04_removeFromArray
 **/solution
 local/*
 .vscode
