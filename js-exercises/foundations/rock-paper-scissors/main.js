@@ -10,3 +10,7 @@ function getComputerChoice() {
         return "P"
     }
 }
+
+function getHumanChoice() {
+    return prompt("Please enter your choice out of R/P/S to play.")
+}
