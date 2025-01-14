@@ -20,25 +20,25 @@ let humanScore = 0, computerScore = 0;
 function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toUpperCase();
 
-    if (humanChoice == computerChoice) {
+    if (humanChoice === computerChoice) {
         console.log("It's a tie! You both picked " + humanChoice)
         return 0
-    } else if (humanChoice == "R" && computerChoice == "P") {
+    } else if (humanChoice === "R" && computerChoice === "P") {
         console.log("You lose! Paper beats Rock.")
         return -1
-    } else if (humanChoice == "P" && computerChoice == "S") {
+    } else if (humanChoice === "P" && computerChoice === "S") {
         console.log("You lose! Scissors beats Paper.")
         return -1
-    } else if (humanChoice == "S" && computerChoice == "R") {
+    } else if (humanChoice === "S" && computerChoice === "R") {
         console.log("You lose! Rock beats Scissors.")
         return -1
-    } else if (computerChoice == "R" && humanChoice == "P") {
+    } else if (computerChoice === "R" && humanChoice === "P") {
         console.log("You win! Paper beats Rock.")
         return 1
-    } else if (computerChoice == "P" && humanChoice == "S") {
+    } else if (computerChoice === "P" && humanChoice === "S") {
         console.log("You win! Scissors beats Paper.")
         return 1
-    } else if (computerChoice == "S" && humanChoice == "R") {
+    } else if (computerChoice === "S" && humanChoice === "R") {
         console.log("You win! Rock beats Scissors.")
         return 1
     } else {
