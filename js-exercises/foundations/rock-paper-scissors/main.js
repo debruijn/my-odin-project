@@ -15,8 +15,6 @@ function getHumanChoice() {
     return prompt("Please enter your choice out of R/P/S to play.")
 }
 
-let humanScore = 0, computerScore = 0;
-
 function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toUpperCase();
 
@@ -48,12 +46,29 @@ function playRound(humanChoice, computerChoice) {
 
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+function playGame(rounds = 5) {
+    let humanScore = 0, computerScore = 0;
 
-let res = playRound(humanSelection, computerSelection);
-if (res === 1) {
-    humanScore += 1
-} else if (res === -1) {
-    computerScore += 1
+    for (let r = 0; r < rounds; r++) {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+
+        let res = playRound(humanSelection, computerSelection);
+        if (res === 1) {
+            humanScore += 1
+        } else if (res === -1) {
+            computerScore += 1
+        }
+    }
+
+    console.log("Results: " + humanScore + " - " + computerScore)
+    if (humanScore > computerScore) {
+        console.log("You win the game!")
+    } else if (computerScore > humanScore) {
+        console.log("You lose the game!")
+    } else {
+        console.log("The game ends in a tie!")
+    }
 }
+
+playGame(5);
