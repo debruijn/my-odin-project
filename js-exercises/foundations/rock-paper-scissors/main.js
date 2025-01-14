@@ -14,3 +14,5 @@ function getComputerChoice() {
 function getHumanChoice() {
     return prompt("Please enter your choice out of R/P/S to play.")
 }
+
+let humanScore = 0, computerScore = 0;
