@@ -9,5 +9,8 @@ jetbrains_boilerplate
 testground
 css-exercises/*
 !css-exercises/foundations
+js-exercises/foundations
 **/solution
 local/*
+.vscode
+.DS_Store
