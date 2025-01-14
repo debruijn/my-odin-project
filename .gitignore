@@ -16,6 +16,7 @@ js-exercises/foundations/*
 !js-exercises/foundations/03_reverseString
 !js-exercises/foundations/04_removeFromArray
 !js-exercises/foundations/05_sumAll
+!js-exercises/foundations/06_leapYears
 **/solution
 local/*
 .vscode
