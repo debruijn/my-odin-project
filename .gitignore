@@ -11,6 +11,7 @@ css-exercises/*
 !css-exercises/foundations
 js-exercises/foundations/*
 !js-exercises/foundations/00_rock-paper-scissors
+!js-exercises/foundations/01_helloWorld
 **/solution
 local/*
 .vscode
