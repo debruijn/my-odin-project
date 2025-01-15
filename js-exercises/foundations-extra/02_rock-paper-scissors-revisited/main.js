@@ -50,7 +50,7 @@ function updateScore(button) {
         } else if (res === -1) {
             computerScore += 1;
         }
-        document.querySelector("#score").innerText = "Score: " + humanScore + " - " + computerScore;
+        score.innerText = "Score: " + humanScore + " - " + computerScore;
 
         if (humanScore === 5) {
             alert("You have won the game! The final score is 5 - " + computerScore);
@@ -59,6 +59,12 @@ function updateScore(button) {
             alert("You have lost the game! The final score is " + humanScore + " - 5..");
             gameDone = true;
         }
+    } else {
+        gameDone = false;
+        humanScore = 0;
+        computerScore = 0;
+        lastRound.innerText = "New game!"
+        score.innerText = "Score: " + humanScore + " - " + computerScore;
     }
 }
 
@@ -69,3 +75,4 @@ buttons.forEach((button) => {
     button.addEventListener("click", updateScore);
 });
 const lastRound = document.querySelector("#last_round")
+const score = document.querySelector("#score")
