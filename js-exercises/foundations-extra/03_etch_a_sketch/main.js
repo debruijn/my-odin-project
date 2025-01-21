@@ -13,9 +13,11 @@ container.style.flexDirection = 'column';
 container.style.justifyContent = 'center';
 container.style.flex = 'auto';
 container.style.height = '100%';
-let size = 16;
+let size = 100;
 
-
+function changeColor(event) {
+    event.target.style.backgroundColor = 'black';
+}
 
 for (let i = 0; i < size; i++) {
     let row = document.createElement('div')
@@ -24,16 +26,17 @@ for (let i = 0; i < size; i++) {
     row.style.flex = 'auto';
     row.style.flexDirection = 'row';
     row.style.justifyContent = 'center';
-    // row.style.height = 'auto';
     container.appendChild(row)
     for (let j = 0; j < size; j++) {
         let cell = document.createElement('div');
         cell.className = 'el';
-        cell.style.border = 'solid';
+        cell.style.border = 'dotted';
         cell.style.borderWidth = 'thin';
         cell.style.flex = 'auto';
-        // cell.style.height = 'auto';
-        cell.innerText = '\n';
+        cell.innerText = '';
+        cell.addEventListener("mouseover", changeColor, false);
         row.appendChild(cell);
     }
 }
+
+
