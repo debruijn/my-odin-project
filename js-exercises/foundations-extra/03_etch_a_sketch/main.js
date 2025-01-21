@@ -32,7 +32,7 @@ function changeColor(event) {
 }
 
 function getSize() {
-    let res = prompt("How many elements do you want in each row and column? [1-100]")
+    let res = prompt("How many elements do you want in each row and column? [1-100]", "100")
     clearGrid(size);
     size = Math.min(Math.max(parseInt(res), 1), 100);
     createGrid(size);
