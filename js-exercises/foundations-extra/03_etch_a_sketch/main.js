@@ -13,10 +13,18 @@ container.style.flexDirection = 'column';
 container.style.justifyContent = 'center';
 container.style.flex = 'auto';
 container.style.height = '100%';
-let size = 100;
+let size = 16;
+
+let mode = 2;  // 1: default; 2: random colors; 3: increase darkness
 
 function changeColor(event) {
-    event.target.style.backgroundColor = 'black';
+    if (mode === 1) {
+        event.target.style.backgroundColor = 'black';
+    } else if (mode === 2) {
+        event.target.style.backgroundColor = 'rgb(' + Math.round(255*Math.random()) + ' ' +
+            Math.round(255*Math.random()) + ' ' +
+            Math.round(255*Math.random()) + ')';
+    }
 }
 
 function getSize() {
