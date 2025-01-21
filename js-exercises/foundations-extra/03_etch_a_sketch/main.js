@@ -19,24 +19,40 @@ function changeColor(event) {
     event.target.style.backgroundColor = 'black';
 }
 
-for (let i = 0; i < size; i++) {
-    let row = document.createElement('div')
-    row.className = 'row';
-    row.style.display = 'flex';
-    row.style.flex = 'auto';
-    row.style.flexDirection = 'row';
-    row.style.justifyContent = 'center';
-    container.appendChild(row)
-    for (let j = 0; j < size; j++) {
-        let cell = document.createElement('div');
-        cell.className = 'el';
-        cell.style.border = 'dotted';
-        cell.style.borderWidth = 'thin';
-        cell.style.flex = 'auto';
-        cell.innerText = '';
-        cell.addEventListener("mouseover", changeColor, false);
-        row.appendChild(cell);
+function getSize() {
+    let res = prompt("How many elements do you want in each row and column? [1-100]")
+    clearGrid(size);
+    size = Math.min(Math.max(parseInt(res), 1), 100);
+    createGrid(size);
+}
+
+function clearGrid(size) {
+    for (let i = size-1; i >= 0; i--) {
+        container.children[i].remove();
     }
 }
 
+function createGrid(size) {
+    for (let i = 0; i < size; i++) {
+        let row = document.createElement('div')
+        row.className = 'row';
+        row.style.display = 'flex';
+        row.style.flex = 'auto';
+        row.style.flexDirection = 'row';
+        row.style.justifyContent = 'center';
+        container.appendChild(row)
+        for (let j = 0; j < size; j++) {
+            let cell = document.createElement('div');
+            cell.className = 'el';
+            cell.style.border = 'dotted';
+            cell.style.borderWidth = 'thin';
+            cell.style.flex = 'auto';
+            cell.innerText = '';
+            cell.addEventListener("mouseover", changeColor, false);
+            row.appendChild(cell);
+        }
+    }
+}
 
+container.addEventListener("click", getSize, false)
+createGrid(size);
