@@ -20,6 +20,7 @@ js-exercises/foundations/*
 !js-exercises/foundations/08_calculator
 !js-exercises/foundations/09_palindromes
 !js-exercises/foundations/10_fibonacci
+!js-exercises/foundations/11_getTheTitles
 **/solution
 local/*
 .vscode
