@@ -1,11 +1,4 @@
-// Plan:
-// - Get container reference
-// - Create square divs and add to container as a 4x4 grid (or flexible?)
-// - Use flexbox in specifying how to show them
-// - Add the hover effect to change the color when mouse pointer moves over a grid
-// - Allow for overwrite of grid with new grid based on numeric input
-// - Make grid random color when going through grid
-// - Make square darker by 10%
+let mode = 3;  // 1: default; 2: random colors; 3: increase darkness by 10%
 
 const container = document.querySelector("#container");
 container.style.display = 'flex';
@@ -15,7 +8,16 @@ container.style.flex = 'auto';
 container.style.height = '100%';
 let size = 16;
 
-let mode = 2;  // 1: default; 2: random colors; 3: increase darkness
+function darkenColor(rgb_col) {
+    if (rgb_col === '') {
+        return 'rgb(255 255 255)'
+    }
+    let split_col = rgb_col.replaceAll(' ', '').replace('rgb(', '').replace(')', '').split(',');
+    let col_r = parseInt(split_col[0]) / 1.1;
+    let col_g = parseInt(split_col[1]) / 1.1;
+    let col_b = parseInt(split_col[2]) / 1.1;
+    return 'rgb(' + col_r + ' ' + col_g + ' ' + col_b + ')';
+}
 
 function changeColor(event) {
     if (mode === 1) {
@@ -24,6 +26,8 @@ function changeColor(event) {
         event.target.style.backgroundColor = 'rgb(' + Math.round(255*Math.random()) + ' ' +
             Math.round(255*Math.random()) + ' ' +
             Math.round(255*Math.random()) + ')';
+    } else if (mode === 3) {
+        event.target.style.backgroundColor = darkenColor(event.target.style.backgroundColor);
     }
 }
 
