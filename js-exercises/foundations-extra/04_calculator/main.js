@@ -38,19 +38,26 @@ function createRow() {
     row.style.flexDirection = 'row';
     row.style.justifyContent = 'center';
     container.appendChild(row)
+    row.style.fontSize = 'x-large';
     return row
 }
 
 
-function createButton(text, row) {
+function createButton(text, row, mult=1, col='rgb(120 120 255)') {
     let cell = document.createElement('div');
     cell.className = 'el';
     cell.style.border = 'solid';
-    cell.style.borderWidth = 'thin';
+    cell.style.borderWidth = '1px';
     cell.style.flex = 'none';
-    cell.style.width = '50px'
+    if (mult === 2) {
+        cell.style.width = '102px'
+    } else if (mult === 3) {
+        cell.style.width = '154px'
+    } else {
+        cell.style.width = '50px'
+    }
     cell.innerText = text;
-    cell.style.fontSize = 'x-large';
+    cell.style.backgroundColor = col;
     cell.style.alignContent = 'center';
     cell.style.textAlign = 'center';
     // cell.addEventListener("mouseover", changeColor, false);
@@ -58,38 +65,43 @@ function createButton(text, row) {
 }
 
 
+
 function createGrid() {
+
+    let disp = createRow();
+    createButton(num1, disp, 1, 'rgb(255 255 255)');
+    createButton('', disp,1, 'rgb(255 255 255)');
+    createButton(num2, disp, 2, 'rgb(255 255 255)');
+    disp.style.fontSize = 'xx-large';
+
     let row = createRow();
     createButton(7, row);
     createButton(8, row);
     createButton(9, row);
-    createButton('%', row);
+    createButton('%', row, 1, 'rgb(180 180 180)');
 
     row = createRow();
     createButton(4, row);
     createButton(5, row);
     createButton(6, row);
-    createButton('x', row);
+    createButton('x', row, 1, 'rgb(180 180 180)');
 
     row = createRow();
     createButton(1, row);
     createButton(2, row);
     createButton(3, row);
-    createButton('-', row);
+    createButton('-', row, 1, 'rgb(180 180 180)');
 
     row = createRow();
+    createButton('<=', row, 1, 'rgb(255 120 120)');
     createButton(0, row);
-    createButton('.', row);
-    createButton('<=', row);
-    createButton('+', row);
+    createButton('.', row, 1, 'rgb(180 180 180)');
+    createButton('+', row, 1, 'rgb(180 180 180)');
+
+    row = createRow();
+    createButton('clr', row, 1, 'rgb(255 120 120)');
+    createButton('=', row, 3, 'rgb(120 255 120)');
 
 }
 
 createGrid();
-
-// Grid design:
-// 3x3 for nums
-// extra row: 0, decimal point, backspace
-// ops next to nums
-// big enter below, with smaller clear
-// display above, showing prev num, operator, and curr num
