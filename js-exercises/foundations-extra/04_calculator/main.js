@@ -14,6 +14,14 @@ const divide = function(a, b) {
     return a / b
 };
 
+const operate = function(op, a, b) {
+    if (op === divide && b === 0) {
+        alert("Don't divide by 0, silly!")
+        return 0;
+    }
+    return op(a, b);
+}
+
 let num1 = 0, num2 = 0, op = add;
 
 
@@ -85,7 +93,7 @@ let numPressed = function(event) {
             }
             num2 = parseFloat(disp_prev.children[2].innerText);
             disp.children[0].innerText = op(num1, num2);
-            lastRes = op(num1, num2)
+            lastRes = operate(op,num1, num2);
             disp.children[0].innerText = Math.round(lastRes*10**8) / 10**8;
             enterFirstNum = true;
             keepDisp = true;
@@ -124,7 +132,7 @@ let numPressed = function(event) {
         if (enterFirstNum === false) {
             num1 = parseFloat(disp_prev.children[0].innerText);
             num2 = parseFloat(disp_prev.children[2].innerText);
-            lastRes = op(num1, num2)
+            lastRes = operate(op,num1, num2);
             disp.children[0].innerText = Math.round(lastRes*10**8) / 10**8;
             disp_prev.children[0].innerText = Math.round(lastRes*10**8) / 10**8;
             disp_prev.children[2].innerText = 0;
@@ -156,8 +164,6 @@ createButton(num2, disp_prev, 1.75, 'rgb(255 255 255)');
 let disp = createRow();
 createButton(num2, disp, 4, 'rgb(255 255 255)');
 disp.style.fontSize = 'xx-large';
-// disp.style.textAlign = 'right';
-// disp.children[0].style.paddingRight = '2px';
 
 let row = createRow();
 createButton(7, row);
@@ -180,19 +186,9 @@ createButton('-', row, 1, 'rgb(180 180 180)');
 row = createRow();
 createButton('<=', row, 1, 'rgb(255 120 120)');
 createButton(0, row);
-createButton('.', row, 1, 'rgb(180 180 180)');
+// createButton('.', row, 1, 'rgb(180 180 180)');
+createButton('clr', row, 1, 'rgb(255 120 120)');
 createButton('+', row, 1, 'rgb(180 180 180)');
 
 row = createRow();
-createButton('clr', row, 1, 'rgb(255 120 120)');
-createButton('=', row, 3, 'rgb(120 255 120)');
-
-
-// Options:
-// - Num -> op -> Num -> = -> res
-// - Num -> op -> Num -> other op -> res but also res as new first num
-// - Op -> Num -> = -> res (take prev res
-// - Op -> Num -> other op -> res but also rest as new first num
-
-// State: enter num1 / enter num2 (start at: num1)
-// Press op immediate: shift curr res into num1 and enter num2 mode
+createButton('=', row, 4, 'rgb(120 255 120)');
