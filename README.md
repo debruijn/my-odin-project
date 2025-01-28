@@ -6,7 +6,12 @@ about JavaScript, to add to my current set of languages I am proficient in.
 
 ### Status per path:
 1. Foundations track: 100% complete (finished HTML, CSS & JavaScript parts)
-2. Full Stack JavaScript: to do
+2. Full Stack JavaScript:
+    - Intermediate HTML and CSS: 17% complete
+    - JavaScript: to do
+    - Advanced HTML and CSS: to do
+    - React: to do
+    - Databases: to do
+    - NodeJS: to do
+    - Getting Hired: to do
 3. Full Stack Ruby on Rails: to do
-
-I currently think I will choose the JS route over the Ruby route, but not sure yet. Next commits will show more?
