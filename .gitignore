@@ -9,6 +9,8 @@ jetbrains_boilerplate
 testground
 css-exercises/*
 !css-exercises/foundations
+!css-exercises/intermediate-html-css
+css-exercises/intermediate-html-css/advanced-grid
 js-exercises/foundations/archive
 **/solution
 local/*
