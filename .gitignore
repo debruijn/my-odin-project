@@ -10,9 +10,10 @@ testground
 css-exercises/*
 !css-exercises/foundations
 !css-exercises/intermediate-html-css
-css-exercises/intermediate-html-css/advanced-grid
+css-exercises/intermediate-html-css/advanced-grid/02-holy-grail-mockup
 js-exercises/foundations/archive
 **/solution
+**/desired-outcome*.png
 local/*
 .vscode
 .DS_Store
