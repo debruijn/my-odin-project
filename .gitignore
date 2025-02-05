@@ -10,6 +10,7 @@ testground
 css-exercises/*
 !css-exercises/foundations
 !css-exercises/intermediate-html-css
+!css-exercises/landing-page
 js-exercises/foundations/archive
 **/solution
 **/desired-outcome*.png
