@@ -1,11 +1,19 @@
 let myLibrary = [];
 
-function Book(title, author, nrPages, haveRead=false) {
-    this.title = title;
-    this.author = author;
-    this.nrPages = nrPages;
-    this.haveRead = haveRead;
-    this.info = function() {
+class Book {
+    title;
+    author;
+    nrPages = 0;
+    haveRead = false;
+
+    constructor(title, author, nrPages, haveRead=false) {
+        this.title = title;
+        this.author = author;
+        this.nrPages = nrPages;
+        this.haveRead = haveRead;
+    }
+
+    get info() {
         return this.title + " by " + this.author + ", " + this.nrPages + " pages, " + (this.haveRead ? "already read" : "not read yet")
     }
 }
@@ -25,7 +33,7 @@ document.getElementsByClassName("summary").item(0).textContent = "This is my lib
 
 function dispCurrBook() {
     if (myLibrary.length >= 1) {
-        document.getElementsByClassName("curr_book").item(0).textContent = "Current book (" + (currBook + 1) + "/" + myLibrary.length + "): " + myLibrary[currBook].info();
+        document.getElementsByClassName("curr_book").item(0).textContent = "Current book (" + (currBook + 1) + "/" + myLibrary.length + "): " + myLibrary[currBook].info;
     } else {
         document.getElementsByClassName("curr_book").item(0).textContent = "No current book to display."
     }
