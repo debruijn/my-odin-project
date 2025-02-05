@@ -87,7 +87,7 @@ textarea {
 .library {
   text-align: center;
   display: inline-grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 5fr;
   gap: 5px;
 }
 
@@ -110,6 +110,11 @@ textarea {
   gap: 5px;
 }
 
+.legend {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
 
 /* ==========================================================================
    Helper classes

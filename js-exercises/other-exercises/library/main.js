@@ -19,8 +19,6 @@ addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295);
 addBookToLibrary("The Nobbit", "J.R.R. Fauxkien", 42, true);
 addBookToLibrary("More filler stuff", "Nobody", 1234);
 
-console.log(myLibrary)
-
 let currBook = 0;
 
 document.getElementsByClassName("summary").item(0).textContent = "This is my library containing " + myLibrary.length + " book(s).";
@@ -59,9 +57,23 @@ function prevBook() {
     dispCurrBook();
 }
 
+function randomBook() {
+    currBook = Math.floor(Math.random() * myLibrary.length);
+    dispCurrBook();
+}
+
+function addBook() {
+    const title = document.getElementById("title").value;
+    const author = document.getElementById("author").value;
+    const nrPages = document.getElementById("nrPages").value;
+    addBookToLibrary(title, author, nrPages);
+    currBook = myLibrary.length - 1;
+    dispCurrBook();
+}
+
+document.getElementsByClassName("random_book").item(0).addEventListener("click", randomBook, false)
 document.getElementsByClassName("toggle_book").item(0).addEventListener("click", toggleRead, false)
 document.getElementsByClassName("rm_book").item(0).addEventListener("click", rmBook, false)
-
 document.getElementsByClassName("next_book").item(0).addEventListener("click", nextBook, false)
 document.getElementsByClassName("prev_book").item(0).addEventListener("click", prevBook, false)
-
+document.getElementsByClassName("add_book").item(0).addEventListener("click", addBook, false)
