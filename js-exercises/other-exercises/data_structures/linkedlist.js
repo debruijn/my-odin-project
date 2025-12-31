@@ -1,4 +1,4 @@
-class LinkedList {
+export class LinkedList {
     constructor() {
         this.nextNode = null
     }
@@ -118,6 +118,32 @@ class LinkedList {
             }
         }
         return null
+    }
+
+    get_using_first(value) {
+        let curr = this
+        let count = 0
+        while (curr.nextNode !== null) {
+            curr = curr.nextNode
+            count += 1
+            if (curr.value[0] === value) {
+                return curr.value[1]
+            }
+        }
+        return null
+    }
+
+    has_using_first(value) {
+        let curr = this
+        let count = 0
+        while (curr.nextNode !== null) {
+            curr = curr.nextNode
+            count += 1
+            if (curr.value[0] === value) {
+                return true
+            }
+        }
+        return false
     }
 
     toString() {
