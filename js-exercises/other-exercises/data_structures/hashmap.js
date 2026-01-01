@@ -70,7 +70,6 @@ class HashMap {
         for (let [i, bucket] of this.buckets.entries()) {
             str += i + ': ' + bucket.toString() + '\n'
         }
-
         return str
     }
 
