@@ -96,6 +96,23 @@ export class LinkedList {
         }
     }
 
+    pop_first() {
+        if (this.nextNode == null) {
+            return null
+        }
+        let first = this.nextNode
+        this.nextNode = this.nextNode.nextNode
+        return first
+    }
+
+    pop_first_val() {
+        let node = this.pop_first()
+        if (node == null) {
+            return null
+        }
+        return node.value
+    }
+
     contains(value) {
         let curr = this
         while (curr.nextNode !== null) {
@@ -118,6 +135,19 @@ export class LinkedList {
             }
         }
         return null
+    }
+
+    set_using_first(key, value) {
+        let curr = this
+        while (curr.nextNode !== null) {
+            curr = curr.nextNode
+            if (curr.value[0] === key) {
+                curr.value = [key, value]
+                return true
+            }
+        }
+        this.append([key, value])
+        return false
     }
 
     get_using_first(value) {
@@ -144,6 +174,38 @@ export class LinkedList {
             }
         }
         return false
+    }
+
+    remove_using_first(value) {
+        let curr = this
+        while (curr.nextNode !== null) {
+            if (curr.nextNode.value[0] === value) {
+                curr.nextNode = curr.nextNode.nextNode
+                return true
+            }
+            curr = curr.nextNode
+        }
+        return false
+    }
+
+    get_all_first() {
+        let all_first = Array()
+        let curr = this
+        while (curr.nextNode !== null) {
+            curr = curr.nextNode
+            all_first.push(curr.value[0])
+        }
+        return all_first
+    }
+
+    get_all() {
+        let all_first = Array()
+        let curr = this
+        while (curr.nextNode !== null) {
+            curr = curr.nextNode
+            all_first.push(curr.value)
+        }
+        return all_first
     }
 
     toString() {
