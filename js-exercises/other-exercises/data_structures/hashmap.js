@@ -5,7 +5,7 @@ class HashMap {
     constructor() {
         this.loadFactor = 0.75
         this.capacity = 16
-        this.buckets =  Array.from({length: this.capacity}, () => new LinkedList())
+        this.buckets = Array.from({length: this.capacity}, () => new LinkedList())
     }
 
     hash(key) {
@@ -20,8 +20,8 @@ class HashMap {
     }
 
     update_capacity(new_capacity) {
-        if (this.capacity === new_capacity) {return}
-        if (this.capacity > new_capacity) {return}  // TODO also allow map to become smaller?
+        if (this.capacity === new_capacity) return
+        if (this.capacity > new_capacity) return  // TODO also allow map to become smaller?
         this.capacity = new_capacity
 
         let old_buckets = this.buckets
@@ -74,7 +74,7 @@ class HashMap {
     }
 
     length() {
-        return this.buckets.reduce((acc,element) => acc + element.size(), 0);
+        return this.buckets.reduce((acc, element) => acc + element.size(), 0);
     }
 
     clear() {

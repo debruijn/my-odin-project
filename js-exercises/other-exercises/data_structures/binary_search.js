@@ -37,9 +37,7 @@ class Tree {
     }
 
     insertIter(value, node = this.root) {
-        if (node.value === value) {
-            return
-        }
+        if (node.value === value) return
         if (value < node.value) {
             if (node.left === null) {
                 node.left = new Node(value)
@@ -120,12 +118,8 @@ class Tree {
     }
 
     findIter(value, node = this.root) {
-        if (node === null) {
-            return null
-        }
-        if (node.value === value) {
-            return node
-        }
+        if (node === null) return;
+        if (node.value === value) return node
         if (value < node.value) {
             return this.findIter(value, node.left)
         } else {
@@ -133,11 +127,11 @@ class Tree {
         }
     }
 
-    levelOrderForEach(arr = [], queue = [], root = this.root) {
-        if (root === null) return;
-        arr.push(root.value);
-        queue.push(root.left);
-        queue.push(root.right);
+    levelOrderForEach(arr = [], queue = [], node = this.root) {
+        if (node === null) return;
+        arr.push(node.value);
+        queue.push(node.left);
+        queue.push(node.right);
         while (queue.length) {
             const level = queue[0];
             queue.shift();
@@ -146,37 +140,33 @@ class Tree {
         return arr;
     }
 
-    inOrderForEach(arr = [], root = this.root) {
-        if (root === null) return;
-        if (root.left) this.inOrderForEach(arr, root.left);
-        arr.push(root.value);
-        if (root.right) this.inOrderForEach(arr, root.right);
+    inOrderForEach(arr = [], node = this.root) {
+        if (node === null) return;
+        if (node.left) this.inOrderForEach(arr, node.left);
+        arr.push(node.value);
+        if (node.right) this.inOrderForEach(arr, node.right);
         return arr;
     }
 
-    preOrderForEach(arr = [], root = this.root) {
-        if (root === null) return;
-        arr.push(root.value);
-        if (root.left) this.preOrderForEach(arr, root.left);
-        if (root.right) this.preOrderForEach(arr, root.right);
+    preOrderForEach(arr = [], node = this.root) {
+        if (node === null) return;
+        arr.push(node.value);
+        if (node.left) this.preOrderForEach(arr, node.left);
+        if (node.right) this.preOrderForEach(arr, node.right);
         return arr;
     }
 
-    postOrderForEach(arr = [], root = this.root) {
-        if (root === null) return;
-        if (root.left) this.postOrderForEach(arr, root.left);
-        if (root.right) this.postOrderForEach(arr, root.right);
-        arr.push(root.value);
+    postOrderForEach(arr = [], node = this.root) {
+        if (node === null) return;
+        if (node.left) this.postOrderForEach(arr, node.left);
+        if (node.right) this.postOrderForEach(arr, node.right);
+        arr.push(node.value);
         return arr;
     }
 
     depth(value, node = this.root, curr_depth = 0) {
-        if (node === null) {
-            return null
-        }
-        if (node.value === value) {
-            return curr_depth
-        }
+        if (node === null) return null;
+        if (node.value === value) return curr_depth;
         if (value < node.value) {
             return this.depth(value, node.left, curr_depth + 1)
         } else {
@@ -209,9 +199,7 @@ class Tree {
         let leftBalanced = this.isBalanced(node.left)
         let rightBalanced = this.isBalanced(node.right)
 
-        if (!(leftBalanced && rightBalanced)) {
-            return false
-        }
+        if (!(leftBalanced && rightBalanced)) return false
 
         // Compare heights of nodes - could be done together for optimization
         let leftHeight = this.heightNode(node.left);
@@ -229,9 +217,7 @@ class Tree {
 }
 
 const prettyPrint = (node, prefix = '', isLeft = true) => {
-    if (node === null) {
-        return;
-    }
+    if (node === null) return
     if (node.right !== null) {
         prettyPrint(node.right, `${prefix}${isLeft ? '│   ' : '    '}`, false);
     }

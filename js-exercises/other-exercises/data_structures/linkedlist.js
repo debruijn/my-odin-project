@@ -8,9 +8,7 @@ export class LinkedList {
         newNode.value = value
 
         let curr = this
-        while (curr.nextNode !== null) {
-            curr = curr.nextNode
-        }
+        while (curr.nextNode !== null) curr = curr.nextNode
         curr.nextNode = newNode
     }
 
@@ -65,9 +63,7 @@ export class LinkedList {
 
     tail() {
         let curr = this
-        while (curr.nextNode !== null) {
-            curr = curr.nextNode
-        }
+        while (curr.nextNode !== null) curr = curr.nextNode
         return curr
     }
 
@@ -97,9 +93,7 @@ export class LinkedList {
     }
 
     pop_first() {
-        if (this.nextNode == null) {
-            return null
-        }
+        if (this.nextNode == null) return null
         let first = this.nextNode
         this.nextNode = this.nextNode.nextNode
         return first
