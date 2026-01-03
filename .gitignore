@@ -8,12 +8,13 @@ dist
 jetbrains_boilerplate
 testground
 css-exercises/*
+!css-exercises/advanced-html-css
 !css-exercises/foundations
 !css-exercises/intermediate-html-css
 !css-exercises/landing-page
 js-exercises/foundations/archive
 **/solution
-**/desired-outcome*.png
+**/desired-outcome*.*
 local/*
 .vscode
 .DS_Store
